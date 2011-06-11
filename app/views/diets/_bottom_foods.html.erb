@@ -1,0 +1,15 @@
+<div id="text-22" class="widget widget_text">
+	<span class="widget-top"></span>
+	<h3 class="widgettitle">Lowest Rated</h3>
+	<div class="textwidget">
+
+		<dl>
+			<% @bottom_foods.each do |df| %>
+				<dd><%=link_to df.food.name, df %></dd> 
+			<% end %>
+		</dl>	
+
+
+	</div>
+	<span class="widget-bottom"></span>
+</div>

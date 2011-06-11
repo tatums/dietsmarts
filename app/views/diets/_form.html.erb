@@ -1,0 +1,23 @@
+<%= form_for(@diet) do |f| %>
+  <% if @diet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@diet.errors.count, "error") %> prohibited this diet from being saved:</h2>
+      <ul>
+      <% @diet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="divform">
+    <%= f.label :name, "Diet Name", :class => 'blank_input' %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="textarea">
+    <%= f.text_area :description, :cols => 82, :rows => 10, :value => "Diet Description" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

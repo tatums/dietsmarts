@@ -1,0 +1,48 @@
+
+<div class="row">
+		<div class="column grid_4">
+
+			<h1><%=link_to @diet_food.diet.name, @diet_food.diet %></h1>
+			<h2><%= @diet_food.food.name.upcase %> <span>Score <%= @diet_food.score %></span>
+			</h2>
+
+		</div>
+
+		<div class="column grid_4">
+			<span class="down">
+				<%= button_to 'Bad?', diet_food_downvotes_path(@diet_food), :class=> ['down', 'vote'] %>
+			</span>	
+			<span class="up">
+				<%= button_to 'Good?', diet_food_upvotes_path(@diet_food), :class => ['up', 'vote'] %> 
+			</span>
+		</div>
+</div>
+
+<dl class="votes_container gray-white">
+	<dt> Good Votes (<%= @diet_food.upvotes_count %>)</dt>
+	<% @diet_food.upvotes.each do |up_vote| %>
+		<dd>
+		<h3> <%= link_to up_vote.user.name, up_vote.user %></h3>
+		<%= image_tag up_vote.user.image %>
+		<%= up_vote.user.created_at.strftime("%m/%d/%Y")%>
+		</dd>
+	<% end %>
+</dl>	
+
+<dl class="votes_container gray-white">
+	<dt>Bad Votes (<%= @diet_food.downvotes_count %>)</dt>
+	<% @diet_food.downvotes.each do |down_vote| %>
+	<dd>
+		<h3><%= link_to down_vote.user.name, down_vote.user %></h3>
+		<%= image_tag down_vote.user.image %>
+		<%= down_vote.user.created_at.strftime("%m/%d/%Y")%>
+	</dd>
+	<% end %>
+</dl>
+
+
+<h3>Comments:<%= @diet_food.comments_count %></h3>
+
+<%= render :file => 'comments/index'%>
+
+<%= render :file=> 'comments/new' %>

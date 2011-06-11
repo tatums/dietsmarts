@@ -1,0 +1,29 @@
+	<!--  START menus  -->
+
+<div class="pages-right nav">
+</div>
+<ul class="dropdown-pages nav">
+	<!--<li class="page_item"><%# link_to 'Categories', categories_path %></li>-->	
+	<li class="page_item"><%= link_to 'Diets', diets_path %></li>
+	<li class="page_item"><%= link_to 'Foods', foods_path %>
+		<ul class='children'>
+			<li class="page_item"><%= link_to 'Categories', food_categories_path %></li>
+			<li class="page_item"><%= link_to 'Foods', foods_path %></li>
+		</ul>
+	</li>		
+<% if current_user %>  
+	<li class="page_item"><%=link_to current_user.name, user_path(current_user) %></li>
+	<li class="page_item"><%= link_to "Sign Out", signout_path %>   </li>
+<% else %> 
+	<li class="page_item"><%= link_to "Sign In", login_url %>
+		<ul class='children'>	 
+			<li class="page_item"> <%= link_to "Sign in with Twitter", "/auth/twitter" %> </li>    
+		    <li class="page_item"><%= link_to "Sign in with Facebook", "/auth/facebook" %>  </li>
+		</ul>
+	</li>		
+<% end %>	
+</ul>
+<div class="pages-left nav">
+</div>
+
+<!--  END Menus  -->

@@ -1,0 +1,8 @@
+<h2><%= @user.name %></h2>
+<span><%= image_tag @user.image %></span>
+
+<p>
+Location:	
+<%= @user.location%> <br />
+User since <%= @user.created_at.strftime("%m/%d/%Y") %>
+</p>

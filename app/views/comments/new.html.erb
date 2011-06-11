@@ -1,0 +1,19 @@
+
+
+
+
+<% if current_user %>
+
+<div class="user">
+	<%=image_tag current_user.image, :class=>"user_image" %>	
+	<h3>Hi <%= current_user.full_name %>!! ... Leave a comment</h3>
+	
+</div>	
+
+
+<%= render 'comments/form' %>
+
+
+<% else%>
+	<%= render :template => 'layouts/login' %>
+<% end %>	

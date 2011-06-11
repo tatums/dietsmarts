@@ -1,0 +1,29 @@
+<% if current_user %>
+	<div id="text-22" class="widget widget_text">
+		<span class="widget-top"></span>
+		<h3 class="widgettitle"><%= link_to current_user.name, current_user %></h3>
+		<div class="textwidget">
+			<span><%= image_tag current_user.image, :style => "border:5px solid white" %></span>
+
+			<p>
+			Login from: <%= current_user.provider %><br />	
+			Location:	
+			<%= current_user.location%> <br />
+			User since <%= current_user.created_at.strftime("%m/%d/%Y") %>
+			</p>
+		</div>
+		<span class="widget-bottom"></span>
+	</div>
+<% else %>
+	<div id="text-22" class="widget widget_text">
+		<span class="widget-top"></span>
+		<h3 class="widgettitle">Sign In</h3>
+		<div class="textwidget">
+			
+			<%= render :file  => 'layouts/login'%>
+			
+		</div>
+		<span class="widget-bottom"></span>
+	</div>
+<% end %>
+

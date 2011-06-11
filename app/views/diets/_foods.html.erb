@@ -1,0 +1,9 @@
+<dd class="food">
+		<%=link_to df.food.name.capitalize, df %> <!--<span><%= df.score %></span>-->
+		<span class="down">
+			<%= button_to 'Bad?', diet_food_downvotes_path(df), :class=> ['down', 'vote'] %>
+		</span>	
+		<span class="up">
+			<%= button_to 'Good?', diet_food_upvotes_path(df), :class => ['up', 'vote'] %> 
+		</span>
+</dd>

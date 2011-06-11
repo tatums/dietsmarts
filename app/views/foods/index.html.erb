@@ -1,0 +1,10 @@
+<dl id="index">
+	<dt>Foods</dt>
+	<% @foods.each do |food| %>
+	    <dd><%= link_to food.name.capitalize, food %></dd>
+	<% end %>
+</dl>
+
+<div class="new-action">
+	<%= link_to '+ New Food', new_food_path %>
+</div>

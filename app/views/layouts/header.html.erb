@@ -1,0 +1,64 @@
+<!-- Meta -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Title -->
+<title>Diet Smarts - which foods are good for your diet</title>
+
+  <%= stylesheet_link_tag :all %>
+
+  <%= javascript_include_tag :all %>
+
+  <%= csrf_meta_tag %>
+
+<!-- CSS -->
+
+<!--[if lte IE 6]><style type="text/css">.marginauto { padding-bottom:20px;} .post-wrap { margin-bottom:0px;} .divform label { margin-right: -3px; } .banner { margin-bottom:-30px;} .cornerfix-bottom, .cornerfix-top { background: none; } .homepage-top { margin-bottom: -8px;} .widget-top { margin-bottom: -10px; } div.controls a {background: url("http://www.wpcrave.com/wp6/wp-content/themes/concise2/images/control.gif") no-repeat center center;} div.controls a.activeSlide { background: url("http://www.wpcrave.com/wp6/wp-content/themes/concise2/images/control-selected.gif") no-repeat center center;} .dropdown-pages li:hover ul, .dropdown-pages li.sfHover ul {	background:	#f1f1f1 url("http://www.wpcrave.com/wp6/wp-content/themes/concise2/images/droptop.gif") no-repeat top 0px; } .dropdown-pages ul {width: 15.6em;}</style><![endif]-->
+
+<!--[if lte IE 7]><style type="text/css">.divform input { margin-top: -1px; } .showcaseteaser { margin-left: 14px; } .showcase-buttons { padding-left: 20px; } .dropdown-pages li:hover ul, .dropdown-pages li.sfHover ul {	background:	#f1f1f1 url("http://www.wpcrave.com/wp6/wp-content/themes/concise2/images/droptop.gif") no-repeat top 0px; } </style><![endif]-->
+
+<!-- Javascript -->
+
+<script type="text/javascript">
+//<![CDATA[
+
+jQuery(function($) {
+		$('ul.dropdown-categories').superfish();
+	});
+jQuery(function($) {
+		$('ul.dropdown-pages').superfish();
+	});
+
+Cufon.replace('.logotext, h2, h3, h4, h5, h6,.comment-author');
+
+jQuery(function($) {
+	$('.showcase').after('<div class="controls">').cycle({
+		fx: 'fade',
+		slideExpr: 'div',
+		sync: 1,
+		speedIn: 1200,
+		speedOut: 300 ,
+		timeout: 6000,
+		pager: '.controls',
+		pause: 1,
+		pauseOnPagerHover: 1,
+		prev: '#prev',
+        next: '#next',
+		pagerAnchorBuilder: function(idx, showcase) { return '<a href="#"> </a>'; }		
+	});
+
+});//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function($) {
+	$('.showcase-buttons').hover(function(){
+			$(".showcaseteaserhover", this).stop().animate({width: "112px", left: "-124px"},{queue:false,duration:150});
+			$(".showcaseteaserhover", this).css("padding", "3px");
+			$(".showcaseteaserhover img", this).stop().animate({opacity: ".6"},{queue:false,duration:700});
+	}, function() {
+			$(".showcaseteaserhover", this).stop().animate({width:'0px', left: "-15px"},{queue:false,duration:150});
+			$(".showcaseteaserhover", this).css("padding", "3px 0px");
+			$(".showcaseteaserhover img", this).stop().animate({opacity: ".0"},{queue:false,duration:700});
+	});
+});//]]>
+</script>

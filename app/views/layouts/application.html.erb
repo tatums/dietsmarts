@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<%= render :file => 'layouts/header' %>
+
+</head>
+<body>
+
+<div style="width: 0; height: 0;">
+</div>
+<div class="marginauto"><!-- ends in footer -->
+
+
+	<div class="banner">
+		<%= render :file => 'layouts/logo' %>
+		<%= render :file => 'layouts/navigation' %>
+	</div>
+
+
+
+	<div class="post-bottom">
+		<div class="post-top">
+		</div>
+		<div class="post-wrap">
+
+
+			<div class="post" style="padding: 15px; padding-top: 0;">
+
+				<!--<h2 class="entry-title">Listing diets</h2>-->
+
+				<div class="entry-content">
+
+
+					<%= yield %>
+
+				</div>
+
+			</div><!-- end .post -->
+
+		</div>
+
+	</div>
+
+
+	
+	
+	<div class="sidebar-wrap">
+		<%= render :file => 'layouts/sidebar' %>
+	</div>
+
+
+
+
+</div><!-- /marginauto -->
+
+<div class="footer">
+	<%= render :file  => 'layouts/footer'%>
+</div>
+
+
+	
+</div>  <!--???-->
+<!--<script type="text/javascript"> Cufon.now(); </script>-->
+
+</div> <!--???-->
+
+
+</body>
+</html>

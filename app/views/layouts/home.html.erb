@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<%= render :file => 'layouts/header' %>
+
+</head>
+<body>
+	
+<div class="marginauto"><!-- ends in footer -->
+
+	<div class="banner">
+		<%= render :file => 'layouts/logo' %>
+		<%= render :file => 'layouts/navigation' %>
+	</div>
+
+
+
+	<%= yield %>
+
+
+	
+
+	<!-- <%= render :file => 'layouts/home_bottom' %> -->
+
+
+</div><!-- /marginauto -->
+
+
+
+<div class="footer">
+	<%= render :file  => 'layouts/footer'%>
+</div>
+
+<!--<script type="text/javascript"> Cufon.now(); </script>-->
+
+
+
+</body>
+</html>

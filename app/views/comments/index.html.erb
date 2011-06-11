@@ -1,0 +1,12 @@
+
+<dl id="comments">
+	<% @comments.each do |comment|%>
+		<dd style="border:1px dashed gray; padding:5px; margin:0 0 5px 0">
+		<%=image_tag comment.user.image %>
+		<%=link_to comment.user.name, comment.user %>
+		<%= comment.created_at.strftime("%m/%d/%Y at %I:%M%p")%>
+		<p><%= comment.body %></p>
+		</dd>
+	<% end %>
+</dl>	
+		

@@ -1,0 +1,86 @@
+<div class="post-bottom">
+	<div class="post-top">
+	</div>
+	<div class="post-wrap">
+
+
+		<div class="post" style="padding: 15px; padding-top: 0;">
+
+			<!--<h2 class="entry-title">Listing diets</h2>-->
+
+			<div class="entry-content">
+
+
+							<p id="notice"><%= notice %></p>
+
+							<h2><%= @diet.name %></h2>
+							
+							<div class="action-links">
+								<%# link_to 'Back', diets_path %>
+								<%# link_to 'Edit', edit_diet_path(@diet) %> 
+								<%# link_to 'Destroy', @diet, :confirm => 'Are you sure?', :method => :delete %>
+							</div>
+							<div class="comment more">
+								  <%= @diet.description %>
+							</div>
+							
+							<div id="good-foods" class="foods-container">
+								<% unless @good_foods.empty? %>
+									<dl class="foods_container gray-white">
+										<dt>Voted Safe</dt>	
+										<%= render :partial => "foods", :collection => @good_foods, :as  => :df %>
+									</dl>
+								<% end %>
+							</div>
+								
+							<div id="neutral-foods" class="foods-container">								
+								<% unless @neutral_foods.empty? %>
+									<dl class="foods_container gray-white">
+										<dt>Neutral</dt>	
+										<%= render :partial => "foods", :collection => @neutral_foods, :as  => :df %>
+									</dl>
+								<% end %>
+							</div>
+							
+							<div id="bad-foods" class="foods-container">
+								<% unless @bad_foods.empty? %>
+									<dl class="foods_container gray-white">
+									<dt>Avoid</dt>	
+										<%= render :partial => "foods", :collection => @bad_foods, :as  => :df %>
+									</dl>	
+								<% end%>
+							</div>	
+								
+								
+							<% unless @diet.comments.empty? %>	
+								<%= render :template => 'comments/index', :collection => @diet.comments, :as  => :comments %>
+							<% end %>
+							
+							
+							
+							<%= render :template => 'comments/new' %>
+							
+							
+								
+
+
+			</div>
+
+		</div><!-- end .post -->
+
+	</div>
+
+</div>
+
+
+<div class="sidebar-wrap">
+	<% unless @top_foods.empty? %>
+		<%= render 'top_foods' %>
+	<% end %>
+	
+	<% unless @bottom_foods.empty? %>
+		<%= render 'bottom_foods' %>
+	<% end %>
+</div>
+
+

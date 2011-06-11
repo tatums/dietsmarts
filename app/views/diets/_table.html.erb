@@ -1,0 +1,38 @@
+<% if @diets.empty? %>
+	<p>There no diets for this category yet.</p>
+
+<% else %>
+
+	<% @diets.each do |diet| %>
+
+		<div class="post">
+			<h2 class="entry-title">
+				<%= link_to diet.name, diet %>
+			</h2>
+
+			<div class="meta">
+			 <span><%= diet.created_at.strftime("%b %d, %Y") %></span>  <!--<span>By: admin</span> -->| 
+				<%= link_to "#{diet.comments_count} Comments", diet %>
+			</div>
+
+			<a href="../../2010/10/15/praesent-elit-ipsum/index.html" title="Praesent elit ipsum" class="borderimg">
+				<!--<img src="" alt="" />-->
+			</a>
+
+			<div class="comment more entry-content">
+				<%= diet.description %>
+			</div>
+
+		</div>
+
+
+
+	<% end %>
+
+
+
+
+
+
+	
+<% end %>
